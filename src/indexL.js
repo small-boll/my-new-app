@@ -16,8 +16,8 @@ var mainWindow = null;
 app.on('ready',()=>{
   mainWindow = new BrowserWindow(
     {
-      height:200,
-      width:400,
+      height:800,
+      width:800,
       //必须添加此行才能在渲染进程中使用nodejs
       webPreferences:{
         nodeIntegration:true,
@@ -25,7 +25,11 @@ app.on('ready',()=>{
       }
     }
   );
-  mainWindow.loadFile(path.join(__dirname,'demo1/demo1.html'));
+  //设置自定义菜单 demo2中
+  require('./demo2/menuTxt.js')
+
+  // mainWindow.loadFile(path.join(__dirname,'demo1/demo1.html'));
+  mainWindow.loadFile(path.join(__dirname,'demo2/demo2.html'));
   mainWindow.on('closed',()=>{
     mainWindow = null;
   })
