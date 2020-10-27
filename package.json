@@ -3,7 +3,7 @@
   "productName": "my-new-app",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "src/index.js",
+  "main": "src/indexL.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
