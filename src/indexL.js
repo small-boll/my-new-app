@@ -25,11 +25,17 @@ app.on('ready',()=>{
       }
     }
   );
-  //设置自定义菜单 demo2中
-  require('./demo2/menuTxt.js')
+  
 
   // mainWindow.loadFile(path.join(__dirname,'demo1/demo1.html'));
-  mainWindow.loadFile(path.join(__dirname,'demo2/demo2.html'));
+
+  //设置自定义主菜单 demo2中
+  // require('./demo2/menuTxt.js')
+  // mainWindow.loadFile(path.join(__dirname,'demo2/demo2.html'));
+
+  //右键菜单的制作 （注意：在渲染进程中）
+  mainWindow.loadFile(path.join(__dirname,"demo3/demo3.html"))
+
   mainWindow.on('closed',()=>{
     mainWindow = null;
   })
