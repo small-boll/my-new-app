@@ -34,12 +34,23 @@ app.on('ready',()=>{
   // mainWindow.loadFile(path.join(__dirname,'demo2/demo2.html'));
 
   //右键菜单的制作 （注意：在渲染进程中）
-  mainWindow.loadFile(path.join(__dirname,"demo3/demo3.html"))
+  // mainWindow.loadFile(path.join(__dirname,"demo3/demo3.html"))
 
   //点击 打开浏览器
-  mainWindow.loadFile(path.join(__dirname,'demo4/demo4.html'))
+  // mainWindow.loadFile(path.join(__dirname,'demo4/demo4.html'))
 
-  mainWindow.webContents.toggleDevTools()
+  
+  //在窗口中嵌入网页
+  var BrowserView = electron.BrowserView
+  var view = new BrowserView()
+  mainWindow.setBrowserView(view)
+  view.setBounds({x:0,y:150,width:600,height:400})
+  view.webContents.loadURL("https://baidu.com")
+  //打开子窗口
+  mainWindow.loadFile(path.join(__dirname,'demo5/demo5.html'))
+
+  //打开开发者工具
+  // mainWindow.webContents.toggleDevTools()
 
   mainWindow.on('closed',()=>{
     mainWindow = null;
