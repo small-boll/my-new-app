@@ -20,7 +20,12 @@ app.on('ready',()=>{
   // BrowserWindow.loadFile(path.join(__dirname,"demo2/demo2.html"))
 
   //右键菜单的制作
-  BrowserWindow.loadFile(path.join(__dirname,'demo3/demo3.html'))
+  // BrowserWindow.loadFile(path.join(__dirname,'demo3/demo3.html'))
+
+  //打开浏览器
+  BrowserWindow.loadFile(path.join(__dirname,'demo4/demo4.html'))
+
+  BrowserWindow.webContents.toggleDevTools();
 
   BrowserWindow.webContents.toggleDevTools();
   BrowserWindow.on('closed',()=>{
