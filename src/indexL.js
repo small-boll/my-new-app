@@ -36,6 +36,11 @@ app.on('ready',()=>{
   //右键菜单的制作 （注意：在渲染进程中）
   mainWindow.loadFile(path.join(__dirname,"demo3/demo3.html"))
 
+  //点击 打开浏览器
+  mainWindow.loadFile(path.join(__dirname,'demo4/demo4.html'))
+
+  mainWindow.webContents.toggleDevTools()
+
   mainWindow.on('closed',()=>{
     mainWindow = null;
   })
